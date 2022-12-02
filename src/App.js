@@ -5,15 +5,15 @@ import NewItem from "./Components/NewItem";
 export default function App() {
   return (
     <Switch>
-      <div className="App">
-        <Route path="/Items">
+      
+        <Route path="/">
           <Items />
         </Route>
         <Route path="/ItemDetail/:itemId"></Route>
         <Route path="/newItem">
           <NewItem />
         </Route>
-      </div>
+      
     </Switch>
   );
 }

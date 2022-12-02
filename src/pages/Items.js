@@ -1,7 +1,16 @@
 import { useEffect, useState } from "react";
 import SingleItem from "../Components/SingleItem";
 
+const DUMMY_DATA = [
+  { id: 1, name: "shirt", price: 55 },
+  { id: 2, name: "shoes", price: 30 },
+  { id: 3, name: "jacket", price: 25 },
+];
+
 const Items = () => {
+
+
+
   const [items, setItems] = useState([]);
   const [error, setError] = useState("");
 
@@ -23,7 +32,7 @@ const Items = () => {
         loadedClothes.push({
           id: taskey,
           name: data[taskey].name,
-          price: data[taskey].price
+          price: data[taskey].price,
         });
       }
 
@@ -38,13 +47,15 @@ const Items = () => {
   }, []);
 
   return (
+    
     <div>
+        <h1>Selamlar</h1>
       <ul>
-        {items.map((item) => {
-          <SingleItem id={item.id} name={item.name} price={item.price} />;
-        })}
+        {items.map((item) => (
+          <SingleItem id={item.id} name={item.name} price={item.price} />
+        ))}
       </ul>
-    </div>
+      </div>
   );
 };
 
