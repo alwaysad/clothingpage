@@ -52,7 +52,7 @@ const Items = () => {
         <h1>Selamlar</h1>
       <ul>
         {items.map((item) => (
-          <SingleItem id={item.id} name={item.name} price={item.price} />
+          <SingleItem key={item.id} id={item.id} name={item.name} price={item.price} />
         ))}
       </ul>
       </div>
