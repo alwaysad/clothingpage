@@ -1,48 +1,41 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialFavouriteState = {
-  items: [],
-  totalQuantity: 3,
-};
+const initialBascetState = { items: [], totalQuantity: 0, bascetTotal: 0 };
 
-const favouriteItemSlice = createSlice({
-  name: "favourite",
-  initialState: initialFavouriteState,
+const bascetSlice = createSlice({
+  name: "bascet",
+  initialState: initialBascetState,
   reducers: {
-    addtoFavourite(state, action) {
+    addToBascet(state, action) {
       const newItem = action.payload;
       state.totalQuantity++;
+      state.bascetTotal = state.bascetTotal + newItem.price;
       const existingItem = state.items.find((state) => state.id === newItem.id);
-      if(!existingItem){
+
+      if (!existingItem) {
         state.items.push({
           id: newItem.id,
           name: newItem.name,
           price: newItem.price,
-          quantity:1
+          quantity: 1,
         });
-      }
-      else{
+      } else {
         existingItem.quantity++;
       }
-  
-      
-      
     },
-    removeFromFavourite(state, action) {
+    removeFromBascet(state, action) {
       const itemId = action.payload;
       const removedItem = state.items.find((state) => state.id === itemId);
       state.totalQuantity--;
+      state.bascetTotal=state.bascetTotal-removedItem.price;
       if (removedItem.quantity === 1) {
        state.items= state.items.filter((state) => state.id !== itemId);
       } else {
         removedItem.quantity--;
       }
     },
-  
-
   },
 });
 
-export default favouriteItemSlice;
-export const { addtoFavourite, removeFromFavourite } =
-  favouriteItemSlice.actions;
+export default bascetSlice;
+export const { addToBascet, removeFromBascet } = bascetSlice.actions;

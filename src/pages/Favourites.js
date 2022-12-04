@@ -16,6 +16,7 @@ const Favourites=()=>{
                 <Fragment>
                     <p>{item.name}</p>
                     <p>{item.price}</p>
+                    <p>{item.quantity}</p>
                 </Fragment>
             ))}
          </li>

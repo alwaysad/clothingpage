@@ -2,11 +2,12 @@ import { useDispatch } from "react-redux";
 import { addtoFavourite } from "../store/favourite-item";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { addToBascet } from "../store/bascet-item";
 
 
 const SingleItem = (props) => {
 
-  const totalQuantity=useSelector((state)=>state.favourite.totalQuantity);
+const totalQuantity=useSelector((state)=>state.favourite.totalQuantity);
   
 const {name,price,id}=props;
 
@@ -18,16 +19,18 @@ const addYourFavourite=()=>{
     
 }
 
+const addYourBascet=()=>{
+  dispatch(addToBascet({id,name,price}));
+}
 
     return (
       <div>
-    <h1>{totalQuantity}</h1>
     <li>
         <p>{props.name}</p>
         <p>{props.price}</p>
         </li>
         <button onClick={addYourFavourite}>Add to your favourite</button>
-        <NavLink to="/favouriteItems">Favoriteye yolla</NavLink>
+        <button onClick={addYourBascet}>Add to your bascet</button>
       </div>
     );
   };
