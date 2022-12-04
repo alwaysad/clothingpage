@@ -7,7 +7,13 @@ import Favourites from "./pages/Favourites";
 import { Fragment } from "react";
 export default function App() {
   return (
-    
+  
+
+
+
+
+
+
       <Fragment>
         <MainHeader/>
       <main>

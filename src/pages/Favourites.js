@@ -8,8 +8,6 @@ const Favourites=()=>{
     
 
     return <div>
-
-
           <ul>
          <li>
             {Items.map(item=>(
