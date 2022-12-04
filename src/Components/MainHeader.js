@@ -1,6 +1,8 @@
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 const MainHeader = () => {
+  const totalQuantity=useSelector(state=>state.bascet.totalQuantity);
   return (
     <div>
       <header>
@@ -13,7 +15,7 @@ const MainHeader = () => {
               <NavLink to="/items">Items Page</NavLink>
             </li>
             <li>
-              <NavLink to="/bascet">Go to Bascet</NavLink>
+              <NavLink to="/bascet">Go to Bascet {totalQuantity}</NavLink>
             </li>
           </ul>
         </nav>

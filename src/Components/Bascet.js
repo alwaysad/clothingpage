@@ -34,7 +34,7 @@ return <div>
     </ul>
 
     <p>
-        {bascet.bascetTotal}
+       Total amount: {bascet.bascetTotal}
     </p>
 </div>
 

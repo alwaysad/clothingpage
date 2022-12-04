@@ -28,6 +28,7 @@ const addYourBascet=()=>{
     <li>
         <p>{props.name}</p>
         <p>{props.price}</p>
+        <img src={props.image} height="150" width="150"></img>
         </li>
         <button onClick={addYourFavourite}>Add to your favourite</button>
         <button onClick={addYourBascet}>Add to your bascet</button>
