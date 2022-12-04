@@ -9,7 +9,7 @@ const MainHeader = () => {
         <nav>
           <ul>
             <li>
-              <NavLink to="/favouriteItems">Your favourite page</NavLink>
+              <NavLink className="text3xl font-bold underline" to="/favouriteItems">Your favourite page</NavLink>
             </li>
             <li>
               <NavLink to="/items">Items Page</NavLink>
