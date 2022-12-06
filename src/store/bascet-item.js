@@ -10,7 +10,7 @@ const bascetSlice = createSlice({
       const newItem = action.payload;
       state.totalQuantity++;
       state.bascetTotal = state.bascetTotal + newItem.price;
-      const existingItem = state.items.find((state) => state.id === newItem.id);
+      const existingItem = state.items.find((item) => item.id === newItem.id);
 
       if (!existingItem) {
         state.items.push({
@@ -25,7 +25,7 @@ const bascetSlice = createSlice({
     },
     removeFromBascet(state, action) {
       const itemId = action.payload;
-      const removedItem = state.items.find((state) => state.id === itemId);
+      const removedItem = state.items.find((item) => item.id === itemId);
       state.totalQuantity--;
       state.bascetTotal=state.bascetTotal-removedItem.price;
       if (removedItem.quantity === 1) {

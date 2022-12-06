@@ -12,7 +12,7 @@ const favouriteItemSlice = createSlice({
     addtoFavourite(state, action) {
       const newItem = action.payload;
       state.totalQuantity++;
-      const existingItem = state.items.find((state) => state.id === newItem.id);
+      const existingItem = state.items.find((item) => item.id === newItem.id);
       if(!existingItem){
         state.items.push({
           id: newItem.id,
@@ -30,10 +30,10 @@ const favouriteItemSlice = createSlice({
     },
     removeFromFavourite(state, action) {
       const itemId = action.payload;
-      const removedItem = state.items.find((state) => state.id === itemId);
+      const removedItem = state.items.find((item) => item.id === itemId);
       state.totalQuantity--;
       if (removedItem.quantity === 1) {
-       state.items= state.items.filter((state) => state.id !== itemId);
+       state.items= state.items.filter((item) => item.id !== itemId);
       } else {
         removedItem.quantity--;
       }
