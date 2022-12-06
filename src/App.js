@@ -5,24 +5,25 @@ import MainHeader from './Components/MainHeader'
 import Bascet from "./Components/Bascet";
 import Favourites from "./pages/Favourites";
 import { Fragment } from "react";
+import Auth from "./pages/Auth";
+import { useSelector } from "react-redux";
 export default function App() {
+
+  const loggedIn=useSelector(state=>state.auth.isLoggedIn);
+
   return (
-  
-
-
-
-
-
-
       <Fragment>
         <MainHeader/>
       <main>
         <Switch>
+          
           <Route path="/" exact>
             <Redirect to="/items"></Redirect>
           </Route>
           <Route path="/items" exact>
-            <Items />
+            {loggedIn&&<Items />}
+            {!loggedIn&&<Redirect to='/auth'></Redirect>}
+            
           </Route>
           <Route path="/ItemDetail/:itemId"></Route>
           <Route path="/newItem">
@@ -33,7 +34,11 @@ export default function App() {
           </Route>
           <Route path="/bascet">
             <Bascet></Bascet>
+            </Route>
+          <Route path="/auth">
+            <Auth/>
           </Route>
+          
         </Switch>
       </main>
       </Fragment>
