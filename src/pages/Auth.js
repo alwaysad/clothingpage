@@ -5,12 +5,12 @@ import { useHistory } from "react-router-dom";
 import { logIn } from "../store/auth-slice";
 
 const Auth = () => {
-  const history=useHistory();
+  const history = useHistory();
   const mailRef = useRef();
   const passwordRef = useRef();
   const [isLogin, setIsLogin] = useState(true);
 
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
 
   const loginChangeHandler = () => {
     setIsLogin((prevState) => !prevState);
@@ -48,10 +48,9 @@ const Auth = () => {
       }
 
       dispatch(logIn(data.idToken));
-      history.replace('/');
-
+      history.replace("/");
     } catch (error) {
-      alert(error.message)
+      alert(error.message);
     }
   };
 
@@ -71,7 +70,6 @@ const Auth = () => {
               type="email"
               id="email"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-             
               required
               ref={mailRef}
             />
@@ -87,20 +85,17 @@ const Auth = () => {
               type="password"
               id="password"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              
               required
               ref={passwordRef}
             />
           </div>
         </div>
-        <button>
-          {isLogin ? "Sign in" : "Create account"}
-        </button>
+        <button>{isLogin ? "Sign in" : "Create account"}</button>
         <div>
-        <button onClick={loginChangeHandler}>{isLogin?'create new account':'sign with credentials'}</button>
+          <button onClick={loginChangeHandler}>
+            {isLogin ? "create new account" : "sign with credentials"}
+          </button>
         </div>
-
-     
       </form>
     </section>
   );
