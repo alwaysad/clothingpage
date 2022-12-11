@@ -19,7 +19,8 @@ const favouriteItemSlice = createSlice({
           name: newItem.name,
           price: newItem.price,
           quantity:1,
-          image:newItem.image
+          image:newItem.image,
+          description:newItem.description
         });
       }
       else{

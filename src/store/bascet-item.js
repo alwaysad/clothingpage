@@ -12,6 +12,8 @@ const bascetSlice = createSlice({
       state.bascetTotal = state.bascetTotal + newItem.price;
       const existingItem = state.items.find((item) => item.id === newItem.id);
 
+      
+
       if (!existingItem) {
         state.items.push({
           id: newItem.id,

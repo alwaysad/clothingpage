@@ -17,17 +17,17 @@ const Bascet = () => {
       <ul className="flex justify-center space-y-6">
         <li>
           {bascet.items.map((item) => (
-            <div class="max-w-sm rounded overflow-hidden shadow-lg">
+            <div className="max-w-sm rounded overflow-hidden shadow-lg">
               <img
-                class="w-full"
+                className="w-full"
                 src={item.image}
                 alt="Sunset in the mountains"
                 width='150'
                 height='150'
               />
-              <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">{item.name}</div>
-                <p class="text-gray-700 text-base">
+              <div className="px-6 py-4">
+                <div className="font-bold text-xl mb-2">{item.name}</div>
+                <p className="text-gray-700 text-base">
                   Total Amount:{item.quantity}
                 </p>
               </div>

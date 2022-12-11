@@ -26,7 +26,8 @@ const Items = () => {
           name: data[taskey].name,
           price: data[taskey].price,
           image: data[taskey].image,
-          stock:data[taskey].stock
+          stock:data[taskey].stock,
+          description:data[taskey].description
 
         });
       }
@@ -44,10 +45,10 @@ const Items = () => {
   return (
     
     <div>
-        
+  
       <ul className="space-y-6">
         {items.map((item) => ( 
-          <SingleItem key={item.id} id={item.id} name={item.name} price={item.price} image={item.image} stock={item.stock} />
+          <SingleItem key={item.id} id={item.id} name={item.name} price={item.price} image={item.image} stock={item.stock} description={item.description} />
         
         ))}
       </ul>
