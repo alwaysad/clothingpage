@@ -7,12 +7,13 @@ import Favourites from "./pages/Favourites";
 import { Fragment } from "react";
 import Auth from "./pages/Auth";
 import { useSelector } from "react-redux";
+import Layout from "./Components/Layout";
 export default function App() {
 
   const loggedIn=useSelector(state=>state.auth.isLoggedIn);
 
   return (
-      <Fragment>
+      <Layout>
         <MainHeader/>
       <main>
         <Switch>
@@ -41,7 +42,7 @@ export default function App() {
           
         </Switch>
       </main>
-      </Fragment>
+      </Layout>
     
   );
 }

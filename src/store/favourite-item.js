@@ -18,7 +18,8 @@ const favouriteItemSlice = createSlice({
           id: newItem.id,
           name: newItem.name,
           price: newItem.price,
-          quantity:1
+          quantity:1,
+          image:newItem.image
         });
       }
       else{

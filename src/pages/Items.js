@@ -44,10 +44,11 @@ const Items = () => {
   return (
     
     <div>
-        <h1>Selamlar</h1>
-      <ul>
-        {items.map((item) => (
+        
+      <ul className="space-y-6">
+        {items.map((item) => ( 
           <SingleItem key={item.id} id={item.id} name={item.name} price={item.price} image={item.image} stock={item.stock} />
+        
         ))}
       </ul>
       </div>

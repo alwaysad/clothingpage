@@ -18,6 +18,7 @@ const bascetSlice = createSlice({
           name: newItem.name,
           price: newItem.price,
           quantity: 1,
+          image:newItem.image
         });
       } else {
         existingItem.quantity++;
