@@ -1,4 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { NotificationManager } from "react-notifications";
+
 
 const initialAuthState = {
   token: localStorage.getItem("token"),
@@ -9,6 +11,7 @@ const AuthSlice = createSlice({
   initialState: initialAuthState,
   reducers: {
     logIn(state, action) {
+      
       const newToken = action.payload;
       state.token = newToken;
       if (state.token) {
@@ -16,13 +19,14 @@ const AuthSlice = createSlice({
       } else {
         state.isLoggedIn = false;
       }
-
+     
       localStorage.setItem("token", newToken);
     },
     logOut(state) {
       state.isLoggedIn = false;
       state.token = null;
       localStorage.removeItem("token");
+      NotificationManager.success('Succesfully logged out','LogOut',2000);
     },
   },
 });

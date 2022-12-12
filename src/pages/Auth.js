@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { logIn } from "../store/auth-slice";
-
+import { NotificationManager } from "react-notifications";
 const Auth = () => {
   const history = useHistory();
   const mailRef = useRef();
@@ -41,11 +41,16 @@ const Auth = () => {
           returnSecureToken: true,
         }),
       });
+     
+        
+
+      
 
       const data = await response.json();
       if (!response.ok) {
         throw new Error(`${data.error.message}`);
       }
+      // NotificationManager.success('succesfully logged in','Login',2000); ilginc bi durum
 
       dispatch(logIn(data.idToken));
       history.replace("/");

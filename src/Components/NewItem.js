@@ -1,15 +1,18 @@
 import { Fragment, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { postItem } from "../store/item-store";
+import { NotificationManager } from "react-notifications";
+import { useHistory } from "react-router-dom";
 
 const NewItem = () => {
   
 const dispatch=useDispatch();
+const history=useHistory();
 const nameRef=useRef();
 const priceRef=useRef();
 const stockRef=useRef();
 const imageRef=useRef();
-
+const descriptionRef=useRef();
 
 
 const submitHandler=(event)=>{
@@ -18,16 +21,19 @@ const submitHandler=(event)=>{
   const enteredPrice=priceRef.current.value;
   const enteredStock=stockRef.current.value;
   const enteredImage=imageRef.current.value;
-
+  const enteredDescription=descriptionRef.current.value;
 
   const newItem={
    name:enteredName,
    price:parseInt(enteredPrice),
    stock:parseInt(enteredStock),
-   image:enteredImage
+   image:enteredImage,
+   description:enteredDescription
   }
 
   dispatch(postItem(newItem));
+  NotificationManager.success('succesfully added','success',2000);
+  history.push('/items')
 
 }
 
@@ -51,6 +57,10 @@ const submitHandler=(event)=>{
   <div class="mb-6">
     <label for="stock" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Stock</label>
     <input type="number" id="stock" ref={stockRef} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required/>
+  </div>
+  <div class="mb-6">
+    <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+    <input type="text" id="description" ref={descriptionRef} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required/>
   </div>
 
   

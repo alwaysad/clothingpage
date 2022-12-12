@@ -3,6 +3,7 @@ import { addtoFavourite, removeFromFavourite } from "../store/favourite-item";
 import { useSelector } from "react-redux";
 import { addToBascet } from "../store/bascet-item";
 import { useState } from "react";
+import { NotificationManager } from "react-notifications";
 
 
 const SingleItem = (props) => {
@@ -20,17 +21,19 @@ const addYourFavourite=()=>{
 
   dispatch(addtoFavourite({id:itemId,name:name,price:price,image:image,description:description}))
   setFavourite(true);
+  NotificationManager.info(`${props.name} added to favourite `);
     
 }
 
 const addYourBascet=()=>{
   dispatch(addToBascet({id:itemId,name,price,image}));
-  
+  NotificationManager.info(`${props.name} added to bascet `);
 
 }
 
 const removeFromFavouriteHandler=()=>{
     dispatch(removeFromFavourite(itemId));
+    NotificationManager.info(`${props.name} removed from favourites `);
     setFavourite(false);
 }
 

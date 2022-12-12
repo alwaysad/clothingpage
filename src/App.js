@@ -8,6 +8,12 @@ import { Fragment } from "react";
 import Auth from "./pages/Auth";
 import { useSelector } from "react-redux";
 import Layout from "./Components/Layout";
+
+import 'react-notifications/lib/notifications.css';
+import { NotificationContainer } from 'react-notifications';
+
+
+
 export default function App() {
 
   const loggedIn=useSelector(state=>state.auth.isLoggedIn);
@@ -42,6 +48,7 @@ export default function App() {
           
         </Switch>
       </main>
+      <NotificationContainer/>
       </Layout>
     
   );

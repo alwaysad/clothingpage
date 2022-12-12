@@ -14,7 +14,8 @@ const Bascet = () => {
   // }
   return (
     <div>
-      <ul className="flex justify-center space-y-6">
+    {!bascet.items.length&&<h1>there is nothing inside</h1>}
+    {bascet.items&& <ul className="flex justify-center space-y-6">
         <li>
           {bascet.items.map((item) => (
             <div className="max-w-sm rounded overflow-hidden shadow-lg">
@@ -63,7 +64,8 @@ const Bascet = () => {
             </div>
           ))}
         </li>
-      </ul>
+      </ul>}
+     
       {bascet.totalQuantity!==0&&<p>Total amount: {bascet.bascetTotal}</p>}
 
       
