@@ -42,7 +42,7 @@ const Auth = () => {
         }),
       });
      
-        
+      
 
       
 
@@ -50,59 +50,71 @@ const Auth = () => {
       if (!response.ok) {
         throw new Error(`${data.error.message}`);
       }
-      // NotificationManager.success('succesfully logged in','Login',2000); ilginc bi durum
+      // NotificationManager.success('successfully logged in','login');
 
       dispatch(logIn(data.idToken));
       history.replace("/");
     } catch (error) {
-      alert(error.message);
+     NotificationManager.error(`${error.message}`,'Error');
     }
   };
 
   return (
-    <section>
-      <form onSubmit={onSubmitHandler}>
-        <h1>{isLogin ? "LOGIN PAGE" : "CREATE PAGE"}</h1>
-        <div className="grid gap-6 mb-6 md:grid-cols-2">
-          <div>
-            <label
-              htmlFor="email"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+    <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
+    <div className="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-xl">
+        <h1 className="text-3xl font-semibold text-center text-purple-700 underline">
+        {isLogin?'Sign in':'Sign up'}   
+        </h1>
+        <form onSubmit={onSubmitHandler} className="mt-6">
+            <div className="mb-2">
+                <label
+                    for="email"
+                    className="block text-sm font-semibold text-gray-800"
+                >
+                    Email
+                </label>
+                <input
+                    ref={mailRef}
+                    type="email"
+                    className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                />
+            </div>
+            <div className="mb-2">
+                <label
+                    for="password"
+                    className="block text-sm font-semibold text-gray-800"
+                >
+                    Password
+                </label>
+                <input
+                ref={passwordRef}
+                    type="password"
+                    className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                />
+            </div>
+           
+            <div className="mt-6">
+              {isLogin&&<button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
+                    Login
+                </button>}  
+               {!isLogin&&<button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
+                    Create Account
+                </button>} 
+            </div>
+        </form>
+
+        <p className="mt-8 text-xs font-light text-center text-gray-700">
+           
+           
+            <a onClick={loginChangeHandler}
+                
+                className="font-medium text-purple-600 hover:underline"
             >
-              Mail
-            </label>
-            <input
-              type="email"
-              id="email"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              required
-              ref={mailRef}
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="password"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              required
-              ref={passwordRef}
-            />
-          </div>
-        </div>
-        <button>{isLogin ? "Sign in" : "Create account"}</button>
-        <div>
-          <button onClick={loginChangeHandler}>
-            {isLogin ? "create new account" : "sign with credentials"}
-          </button>
-        </div>
-      </form>
-    </section>
+               {isLogin?'Sign up':'Sign in'} 
+            </a>
+        </p>
+    </div>
+</div>
   );
 };
 
