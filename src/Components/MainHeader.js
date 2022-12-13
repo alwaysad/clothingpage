@@ -1,14 +1,18 @@
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory, useRouteMatch } from "react-router-dom";
 import { logOut } from "../store/auth-slice";
+
 
 const MainHeader = () => {
   const dispatch=useDispatch();
+  const history=useHistory();
   const totalQuantity=useSelector(state=>state.bascet.totalQuantity);
   const loggedIn=useSelector(state=>state.auth.isLoggedIn);
   
   const logOutHandler=()=>{
     dispatch(logOut());
+    history.push('/auth');
+    
   }
 
   

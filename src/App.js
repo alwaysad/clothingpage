@@ -34,13 +34,19 @@ export default function App() {
           </Route>
           <Route path="/ItemDetail/:itemId"></Route>
           <Route path="/newItem">
-            <NewItem />
+            {loggedIn&&<NewItem />}
+            {!loggedIn&&<Redirect to='/auth'></Redirect>}
+            
           </Route>
           <Route path="/favouriteItems">
-            <Favourites />
+            {loggedIn&&<Favourites />}
+            {!loggedIn&&<Redirect to='/auth'></Redirect>}
+            
           </Route>
           <Route path="/bascet">
-            <Bascet></Bascet>
+            {loggedIn&&<Bascet />}
+            {!loggedIn&&<Redirect to='/auth'></Redirect>}
+           
             </Route>
           <Route path="/auth">
             <Auth/>
