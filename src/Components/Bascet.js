@@ -6,16 +6,11 @@ const Bascet = () => {
   const dispatch = useDispatch();
   const bascet = useSelector((state) => state.bascet);
 
-  // const addToBascetHandler=()=>{
-  // dispatch(addToBascet({}))
-  // }
-  // const removeFromBascetHandler=()=>{
-  //     dispatch(removeFromBascet())
-  // }
+ 
   return (
     <div>
      <h1> {bascet.totalQuantity!==0&&<p>Total price: {bascet.bascetTotal}</p>}</h1>
-    {!bascet.items.length&&<div className=" flex justify-center content-center"><p class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">There is no item inside</p></div>
+    {!bascet.items.length&&<div className=" flex justify-center content-center"><p class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">Start to add items :)</p></div>
 }
     {bascet.items&& <ul className="flex justify-center space-y-6">
         <li>
