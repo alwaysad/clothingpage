@@ -44,9 +44,9 @@ const Items = () => {
 
   return (
     
-    <div>
+    <div className="mt-6">
   
-      <ul className="space-y-6">
+      <ul className="grid  grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {items.map((item) => ( 
           <SingleItem key={item.id} id={item.id} name={item.name} price={item.price} image={item.image} stock={item.stock} description={item.description} />
         
