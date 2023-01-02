@@ -44,14 +44,15 @@ const Items = () => {
 
   return (
     
-    <div className="flex justify-center items-center my-6 min-h-screen">
-  
-      <ul className="grid  grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div className="flex bg-cyan-100 justify-center items-center my-6 min-h-screen">
+      <div className="bg-white rounded-xl shadow-lg p-8">
+      <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {items.map((item) => ( 
           <SingleItem key={item.id} id={item.id} name={item.name} price={item.price} image={item.image} stock={item.stock} description={item.description} />
         
         ))}
       </ul>
+      </div>
       </div>
   );
 };
