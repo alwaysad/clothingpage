@@ -42,20 +42,23 @@ const removeFromFavouriteHandler=()=>{
     <div>
     <li>
 <section className="content-center flex justify-center">
-    <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+    <div className="group max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+    <div className="relative">
     <a href="#">
-        <img className="rounded-t-lg w-full h-48 object-cover" src={props.image} alt=""  />
+        <img className="rounded-t-lg w-full object-cover" src={props.image} alt=""  />
     </a>
+    <div className="absolute text-center text-white bottom-0 left-0 right-0 py-2 px-3 bg-black opacity-0 group-hover:opacity-100 group-hover:bg-opacity-40 ">More details</div>
+    </div>
     <div className="p-5">
         <a href="#">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{props.name}</h5>
+            <h5 className="mb-2 text-2xl text-left font-medium tracking-tight text-gray-900 dark:text-white">{props.name}</h5>
         </a>
-        <div className="flex items-center justify-between mb-6">
-            <span className="text-3xl font-bold text-gray-900 dark:text-white">${props.price}</span>
-        </div>
-        <div className="flex space-x-4 justify-between">
+        
+            <p className="text-2xl text-left text-gray-900 font-light dark:text-white">${props.price}</p>
+        
+        {/* <div className="flex space-x-4 justify-between">
             <div >
-       {!favourite&&<button onClick={addYourFavourite} href="#" className="inline-flex items-center px-10 py-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+       {/* {!favourite&&<button onClick={addYourFavourite} href="#" className="inline-flex items-center px-10 py-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             add to favourite
         </button>}
         {favourite&&<button onClick={removeFromFavouriteHandler} href="#" className="inline-flex items-center px-10 py-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
@@ -66,9 +69,9 @@ const removeFromFavouriteHandler=()=>{
         <button onClick={addYourBascet} href="#" className="inline-flex items-center px-10 py-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             add to bascet
            
-        </button>
+        </button> }
         </div>
-        </div>
+        </div> */}
     </div>
 </div>
 </section>

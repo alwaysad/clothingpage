@@ -8,7 +8,7 @@ import { Fragment } from "react";
 import Auth from "./pages/Auth";
 import { useSelector } from "react-redux";
 import Layout from "./Components/Layout";
-
+import Detail from './pages/Detail'
 import 'react-notifications/lib/notifications.css';
 import { NotificationContainer } from 'react-notifications';
 
@@ -32,7 +32,9 @@ export default function App() {
             {!loggedIn&&<Redirect to='/auth'></Redirect>}
             
           </Route>
-          <Route path="/ItemDetail/:itemId"></Route>
+          <Route path="/ItemDetail/:itemId">
+            <Detail/>
+          </Route>
           <Route path="/newItem">
             {loggedIn&&<NewItem />}
             {!loggedIn&&<Redirect to='/auth'></Redirect>}
