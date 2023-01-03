@@ -60,60 +60,64 @@ const Auth = () => {
   };
 
   return (
-    <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
-    <div className="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-xl">
-        <h1 className="text-3xl font-semibold text-center text-purple-700 underline">
-        {isLogin?'Sign in':'Sign up'}   
-        </h1>
-        <form onSubmit={onSubmitHandler} className="mt-6">
-            <div className="mb-2">
-                <label
-                    for="email"
-                    className="block text-sm font-semibold text-gray-800"
-                >
-                    Email
-                </label>
-                <input
-                    ref={mailRef}
-                    type="email"
-                    className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                />
-            </div>
-            <div className="mb-2">
-                <label
-                    for="password"
-                    className="block text-sm font-semibold text-gray-800"
-                >
-                    Password
-                </label>
-                <input
-                ref={passwordRef}
-                    type="password"
-                    className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                />
-            </div>
-           
-            <div className="mt-6">
-              {isLogin&&<button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
-                    Login
-                </button>}  
-               {!isLogin&&<button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
-                    Create Account
-                </button>} 
-            </div>
-        </form>
+    <div class="flex items-center justify-center min-h-screen bg-rose-50">
 
-        <p className="mt-8 text-xs font-light text-center text-gray-700">
-           
-           
-            <a onClick={loginChangeHandler}
-                
-                className="font-medium text-purple-600 hover:underline"
-            >
-               {isLogin?'Sign up':'Sign in'} 
-            </a>
-        </p>
-    </div>
+<div class="flex relative flex-col space-y-10 m-6 md:flex-row md:space-y-0 bg-white shadow-2xl rounded-2xl">
+  
+<div class="p-6 md:p-20">
+  <p class="text-2xl mb-5 font-bold">{isLogin?'Sign in':'Sign up'}</p>
+  <p class="mb-10 max-w-sm">{isLogin?'Sign into your account to see beautiful clothes':'Sign up to see beautiful clothes'}</p>
+  <input ref={mailRef}  type="text" placeholder="Enter your email adress" class="mb-4 overflow-hidden rounded-lg w-full border px-10 py-4"/>
+  <input ref={passwordRef} type="password" placeholder="Enter your password" class="mb-4 overflow-hidden rounded-lg w-full border px-10 py-4"/> 
+<div class="flex mt-2 flex-col items-center space-y-4 justify-between md:flex-row md:space-y-0">
+  <p>Forgot password</p>
+  <button onClick={onSubmitHandler} type="submit" class=" md:w-auto py-6 px-10 w-full rounded-lg border-lg text-white hover:-translate-y-1 duration-150 bg-cyan-600">{isLogin?'Sign in':'Sign up'}</button>
+</div>
+
+<div class="border-b-2 mt-8 border-gray "></div>
+<p class="my-10 text-center text-gray-500">or log in with</p>
+
+<div class="flex flex-col space-y-6 md:flex-row md:space-x-6 md:space-y-0">
+  <button class="flex items-center space-x-3 justify-center px-10 py-2 border rounded-lg hover:shadow-xl hover:-translate-y-1 duration-200 ">
+    <img class="w-10" src="https://raw.githubusercontent.com/bradtraversy/tailwind-course-projects/main/mini-projects/login-modal/images/facebook.png"/>
+    <span>Facebook</span>
+  </button>
+  <button class="flex items-center space-x-3 justify-center px-6 py-2 border rounded-lg hover:shadow-xl hover:-translate-y-1 duration-200">
+    <img class="w-10" src="https://raw.githubusercontent.com/bradtraversy/tailwind-course-projects/main/mini-projects/login-modal/images/google.png"/>
+    <span>Google</span>
+  </button>
+  
+</div>
+{isLogin&&<p className="text-center mt-4">Don't you have an account <a onClick={loginChangeHandler} className="font-bold cursor-pointer">Sign up</a></p>}
+{!isLogin&&<p className="text-center mt-4">Already have an account <a onClick={loginChangeHandler} className="font-bold cursor-pointer">Sign in</a></p>}
+
+</div>
+
+
+ 
+ 
+    <img class="w-[430px] hidden md:block " src="https://raw.githubusercontent.com/bradtraversy/tailwind-course-projects/main/mini-projects/login-modal/images/image.jpg"/>
+
+<div
+          class="group absolute -top-5 right-4 flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full md:bg-white md:top-4 hover:cursor-pointer hover:-translate-y-0.5 transition duration-150"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-6 h-6 text-black group-hover:text-gray-600"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </div>
+</div>
+
 </div>
   );
 };

@@ -5,6 +5,7 @@ import NotificationManager from "react-notifications/lib/NotificationManager";
 import { CloseCircle } from "../icons/icons";
 import { removeFromFavourite } from "../store/favourite-item";
 
+
 const Favourites=()=>{
     const Items=useSelector((state)=>state.favourite.items);
     const dispatch=useDispatch();
@@ -19,13 +20,14 @@ const Favourites=()=>{
          
             {Items.map(item=>(
                 <li className="relative flex flex-col space-y-3">
-                    {/* <button </button>onClick={()=>{
-                
-                dispatch(removeFromFavourite(item.id));
-                NotificationManager.info(`${item.name} removed from favourites `);
-                setFavourite(false);
-            
-        }}><CloseCircle/></button> */}
+    <div className="hover:cursor-pointer w-5 h-5 rounded-full absolute top-4 right-2 ">
+      <svg onClick={()=>{
+        dispatch(removeFromFavourite(item.id));
+        NotificationManager.info(`${item.name} removed from favourites `);
+      }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+  <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z" clip-rule="evenodd" />
+</svg>
+</div>
             
                 
                 <img className="rounded-lg" src={item.image}/>
