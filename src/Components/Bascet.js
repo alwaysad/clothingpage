@@ -13,8 +13,9 @@ const Bascet = () => {
     {!bascet.items.length&&<div className=" flex justify-center min-h-screen items-center"><p class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">Start to add items :)</p></div>
 }
     {bascet.items&& <ul className="flex justify-center space-y-6">
-        <li>
+       
           {bascet.items.map((item) => (
+             <li>
             <div className="max-w-sm rounded overflow-hidden shadow-lg">
               <img
                 className="w-full"
@@ -59,8 +60,9 @@ const Bascet = () => {
               </div>
               </div>
             </div>
+            </li>
           ))}
-        </li>
+       
       </ul>}
      
       

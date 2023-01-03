@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { addToBascet } from "../store/bascet-item";
 import { useState } from "react";
 import { NotificationManager } from "react-notifications";
-
+import { Link } from "react-router-dom";
 
 const SingleItem = (props) => {
 const [favourite,setFavourite]=useState(false);
@@ -44,10 +44,10 @@ const removeFromFavouriteHandler=()=>{
 <section className="content-center flex justify-center">
     <div className="group max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
     <div className="relative">
-    <a href="#">
+    <Link to={`/ItemDetail/${props.name}`}>
         <img className="rounded-t-lg w-full object-cover" src={props.image} alt=""  />
-    </a>
-    <div className="absolute text-center text-white bottom-0 left-0 right-0 py-2 px-3 bg-black opacity-0 group-hover:opacity-100 group-hover:bg-opacity-40 ">More details</div>
+    </Link>
+    <div className="absolute text-center text-white bottom-0 left-0 right-0 py-2 px-3 bg-black opacity-0 group-hover:opacity-100 group-hover:bg-opacity-40 duration-200 ">More details</div>
     </div>
     <div className="p-5">
         <a href="#">

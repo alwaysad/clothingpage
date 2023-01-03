@@ -32,7 +32,7 @@ export default function App() {
             {!loggedIn&&<Redirect to='/auth'></Redirect>}
             
           </Route>
-          <Route path="/ItemDetail/:itemId">
+          <Route path="/ItemDetail/:item">
             <Detail/>
           </Route>
           <Route path="/newItem">
