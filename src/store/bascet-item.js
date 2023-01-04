@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialBascetState = { items: [], totalQuantity: 0, bascetTotal: 0 };
+const initialBascetState = { items: [], totalQuantity: 0, bascetTotal: 0};
 
 const bascetSlice = createSlice({
   name: "bascet",
@@ -24,6 +24,7 @@ const bascetSlice = createSlice({
         });
       } else {
         existingItem.quantity++;
+       
       }
     },
     removeFromBascet(state, action) {

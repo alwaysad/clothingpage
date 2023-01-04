@@ -60,30 +60,30 @@ const Auth = () => {
   };
 
   return (
-    <div class="flex items-center justify-center min-h-screen bg-rose-50">
+    <div className="flex items-center justify-center min-h-screen bg-rose-50">
 
-<div class="flex relative flex-col space-y-10 m-6 md:flex-row md:space-y-0 bg-white shadow-2xl rounded-2xl">
+<div className="flex relative flex-col space-y-10 m-6 md:flex-row md:space-y-0 bg-white shadow-2xl rounded-2xl">
   
-<div class="p-6 md:p-20">
-  <p class="text-2xl mb-5 font-bold">{isLogin?'Sign in':'Sign up'}</p>
-  <p class="mb-10 max-w-sm">{isLogin?'Sign into your account to see beautiful clothes':'Sign up to see beautiful clothes'}</p>
-  <input ref={mailRef}  type="text" placeholder="Enter your email adress" class="mb-4 overflow-hidden rounded-lg w-full border px-10 py-4"/>
-  <input ref={passwordRef} type="password" placeholder="Enter your password" class="mb-4 overflow-hidden rounded-lg w-full border px-10 py-4"/> 
-<div class="flex mt-2 flex-col items-center space-y-4 justify-between md:flex-row md:space-y-0">
+<div className="p-6 md:p-20">
+  <p className="text-2xl mb-5 font-bold">{isLogin?'Sign in':'Sign up'}</p>
+  <p className="mb-10 max-w-sm">{isLogin?'Sign into your account to see beautiful clothes':'Sign up to see beautiful clothes'}</p>
+  <input ref={mailRef}  type="text" placeholder="Enter your email adress" className="mb-4 overflow-hidden rounded-lg w-full border px-10 py-4"/>
+  <input ref={passwordRef} type="password" placeholder="Enter your password" className="mb-4 overflow-hidden rounded-lg w-full border px-10 py-4"/> 
+<div className="flex mt-2 flex-col items-center space-y-4 justify-between md:flex-row md:space-y-0">
   <p>Forgot password</p>
-  <button onClick={onSubmitHandler} type="submit" class=" md:w-auto py-6 px-10 w-full rounded-lg border-lg text-white hover:-translate-y-1 duration-150 bg-cyan-600">{isLogin?'Sign in':'Sign up'}</button>
+  <button onClick={onSubmitHandler} type="submit" className=" md:w-auto py-6 px-10 w-full rounded-lg border-lg text-white hover:-translate-y-1 duration-150 bg-cyan-600">{isLogin?'Sign in':'Sign up'}</button>
 </div>
 
-<div class="border-b-2 mt-8 border-gray "></div>
-<p class="my-10 text-center text-gray-500">or log in with</p>
+<div className="border-b-2 mt-8 border-gray "></div>
+<p className="my-10 text-center text-gray-500">or log in with</p>
 
-<div class="flex flex-col space-y-6 md:flex-row md:space-x-6 md:space-y-0">
-  <button class="flex items-center space-x-3 justify-center px-10 py-2 border rounded-lg hover:shadow-xl hover:-translate-y-1 duration-200 ">
-    <img class="w-10" src="https://raw.githubusercontent.com/bradtraversy/tailwind-course-projects/main/mini-projects/login-modal/images/facebook.png"/>
+<div className="flex flex-col space-y-6 md:flex-row md:space-x-6 md:space-y-0">
+  <button className="flex items-center space-x-3 justify-center px-10 py-2 border rounded-lg hover:shadow-xl hover:-translate-y-1 duration-200 ">
+    <img className="w-10" src="https://raw.githubusercontent.com/bradtraversy/tailwind-course-projects/main/mini-projects/login-modal/images/facebook.png"/>
     <span>Facebook</span>
   </button>
-  <button class="flex items-center space-x-3 justify-center px-6 py-2 border rounded-lg hover:shadow-xl hover:-translate-y-1 duration-200">
-    <img class="w-10" src="https://raw.githubusercontent.com/bradtraversy/tailwind-course-projects/main/mini-projects/login-modal/images/google.png"/>
+  <button className="flex items-center space-x-3 justify-center px-6 py-2 border rounded-lg hover:shadow-xl hover:-translate-y-1 duration-200">
+    <img className="w-10" src="https://raw.githubusercontent.com/bradtraversy/tailwind-course-projects/main/mini-projects/login-modal/images/google.png"/>
     <span>Google</span>
   </button>
   
@@ -96,14 +96,14 @@ const Auth = () => {
 
  
  
-    <img class="w-[430px] hidden md:block " src="https://raw.githubusercontent.com/bradtraversy/tailwind-course-projects/main/mini-projects/login-modal/images/image.jpg"/>
+    <img className="w-[430px] hidden md:block " src="https://raw.githubusercontent.com/bradtraversy/tailwind-course-projects/main/mini-projects/login-modal/images/image.jpg"/>
 
 <div
-          class="group absolute -top-5 right-4 flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full md:bg-white md:top-4 hover:cursor-pointer hover:-translate-y-0.5 transition duration-150"
+          className="group absolute -top-5 right-4 flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full md:bg-white md:top-4 hover:cursor-pointer hover:-translate-y-0.5 transition duration-150"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="w-6 h-6 text-black group-hover:text-gray-600"
+            className="w-6 h-6 text-black group-hover:text-gray-600"
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
